@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crumbs - Free Question Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .subject-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .coming-soon {
+            position: relative;
+            overflow: hidden;
+        }
+        .coming-soon::after {
+            content: "Coming Soon";
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: #f59e0b;
+            color: white;
+            padding: 2px 30px;
+            transform: rotate(45deg);
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <h1 class="text-3xl font-bold text-purple-600">Crumbs</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="max-w-7xl mx-auto px-4 py-8 text-center">
+        <h1 class="text-5xl font-bold text-gray-800 mb-6">Sift Through Knowledge</h1>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Filter through thousands of questions from past papers. No BS, just pure grind.
+        </p>
+    </div>
+
+    <!-- Subject Grid -->
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Physics Card -->
+            <a href="/physics" class="subject-card bg-white rounded-xl shadow-md p-8 cursor-pointer hover:shadow-lg">
+                <div class="text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        🚀
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Physics</h3>
+                    <p class="text-gray-600">1,000+ questions</p>
+                </div>
+            </a>
+
+            <!-- Other Subjects -->
+            <div class="subject-card coming-soon bg-white rounded-xl shadow-md p-8 opacity-75">
+                <div class="text-center">
+                    <div class="bg-green-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        🌱
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Biology</h3>
+                </div>
+            </div>
+
+            <div class="subject-card coming-soon bg-white rounded-xl shadow-md p-8 opacity-75">
+                <div class="text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        ⚗️
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Chemistry</h3>
+                </div>
+            </div>
+
+            <div class="subject-card coming-soon bg-white rounded-xl shadow-md p-8 opacity-75">
+                <div class="text-center">
+                    <div class="bg-yellow-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        📈
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Economics</h3>
+                </div>
+            </div>
+
+            <div class="subject-card coming-soon bg-white rounded-xl shadow-md p-8 opacity-75">
+                <div class="text-center">
+                    <div class="bg-red-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        ∫
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Mathematics</h3>
+                </div>
+            </div>
+
+            <div class="subject-card coming-soon bg-white rounded-xl shadow-md p-8 opacity-75">
+                <div class="text-center">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        💻
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Computer Science</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-24 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <p class="text-center text-gray-600">
+                &copy; 2025 Crumbs. Free forever, for everyone.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

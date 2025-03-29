@@ -276,17 +276,6 @@ select[multiple] option[value="all"] {
       margin-bottom: 2rem;
     }
 
-.header h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-@media (min-width: 768px) {
-      .header h1 {
-        font-size: 2rem;
-      }
-    }
 
 .loading-indicator {
       display: flex;
