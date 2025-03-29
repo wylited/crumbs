@@ -1,6 +1,6 @@
 async function loadQuestions() {
   try {
-    const response = await fetch('qindex.json');
+    const response = await fetch('physics/qindex.json');
     if (!response.ok) {
       throw new Error('Failed to load questions');
     }
@@ -180,7 +180,7 @@ async function init() {
     if (card) {
       const questionId = card.dataset.id;
       modal.classList.remove('hidden');
-      questionFrame.src = `questions/${questionId}.html`;
+      questionFrame.src = `physics/questions/${questionId}.html`;
     }
   });
 
