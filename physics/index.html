@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Question Bank</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Physics Question Bank</h1>
+      </header>
+
+      <div class="card p-6 mb-6">
+        <div class="mb-4">
+          <button id="toggleFilters" class="btn btn-secondary mb-4 md:hidden w-full">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+            </svg>
+            Toggle Filters
+          </button>
+        </div>
+
+        <div id="filtersContainer" class="md:block">
+          <div class="filter-group">
+            <div class="input-with-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+              </svg>
+              <input type="number" id="marksFilter" placeholder="Maximum marks" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+            </div>
+
+            <div class="select-container">
+              <select id="levelFilter" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                <option value="">All Levels</option>
+                <option>HL</option>
+                <option>SL</option>
+              </select>
+            </div>
+
+            <div class="select-container">
+              <select id="paperFilter" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                <option value="">All Papers</option>
+                <option>1</option>
+                <option>1A</option>
+                <option>1B</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </div>
+
+            <div class="input-with-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <input type="text" id="commandFilter" placeholder="Command term" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+            </div>
+          </div>
+
+          <div class="input-with-icon mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="contentSearch" placeholder="Search question content" class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+          </div>
+
+          <div class="collapsible-header" id="topicFilterHeader">
+            <h3>Topic Filters</h3>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
+
+          <div class="collapsible-content" id="topicFilterContent">
+            <div class="topic-filters">
+              <div>
+                <h4 class="font-medium mb-2">Main Topics</h4>
+                <select id="mainTopic" multiple class="w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                  <option value="all" selected>All Topics</option>
+                  <option value="A.">A. Space, time and motion</option>
+                  <option value="B.">B. The particulate nature of matter</option>
+                  <option value="C.">C. Wave behaviour</option>
+                  <option value="D.">D. Fields</option>
+                  <option value="E.">E. Nuclear and quantum physics</option>
+                </select>
+              </div>
+              <div>
+                <h4 class="font-medium mb-2">Sub-topics</h4>
+                <select id="subTopic" multiple class="w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                  <option value="all" selected>All Sub-topics</option>
+                  <option value=".1">.1</option>
+                  <option value=".2">.2</option>
+                  <option value=".3">.3</option>
+                  <option value=".4">.4</option>
+                  <option value=".5">.5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resultsInfo" class="mb-4 text-gray-600">
+        <span id="resultCount">0</span> questions found
+      </div>
+
+      <div id="questionContainer" class="question-list"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+    <div id="questionModal" class="hidden fixed inset-0 z-50 bg-black bg-opacity-50 p-4 flex items-center justify-center">
+      <div class="relative bg-white rounded-lg w-full h-full max-w-4xl max-h-3/4 overflow-hidden">
+        <button id="closeModal" class="absolute -right-4 -top-4 z-50 text-white hover:text-gray-200 bg-gray-600 rounded-full p-1">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <iframe id="questionFrame" class="rounded-lg w-full h-full"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
